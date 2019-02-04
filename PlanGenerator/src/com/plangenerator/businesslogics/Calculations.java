@@ -17,6 +17,7 @@ public class Calculations {
 	private Payload payload;
 	private String outputString = "";
 	MyResponse myResponse = new MyResponse();
+	private int maxDuration;
 
 	// empty constructor
 	public Calculations() {
@@ -26,13 +27,14 @@ public class Calculations {
 	// the constructor used to retrieve incoming data
 	public Calculations(Payload payload) {
 		this.payload = payload;
+		this.maxDuration = payload.getDuration();
 	}
 
 	// this is the method used by LoansService.java
 	public void calculatePlan() throws ParseException {
 		while (payload.getDuration() > 0) {
 			
-			if (payload.getDuration() < 24)
+			if (payload.getDuration() < maxDuration)
 				outputString = outputString + ",";
 			
 			// please don't switch orders
