@@ -62,7 +62,7 @@ public class Calculations {
 					+ myResponse.getInterest() + "\"," + "\"principal\": \"" + myResponse.getPrincipal() + "\","
 					+ "\"remainingOutstandingPrincipal\": \"" + myResponse.getRemainingOutstandingPrincipal() + "\""
 					+ "}";
-			System.out.println(payload.getDuration());
+//			System.out.println(payload.getDuration());
 			payload.setStartDate(increaseTheDate(date));
 			payload.setLoanAmount(remainingOutstandingPrincipal);
 			payload.setDuration(payload.getDuration() - 1);
